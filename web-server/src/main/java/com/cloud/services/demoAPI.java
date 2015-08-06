@@ -17,6 +17,7 @@ public class demoAPI {
 
 
     public static class Resp {
+
         public String templateName = "aaa";
         public int version = 1;
     }

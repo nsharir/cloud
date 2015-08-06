@@ -5,9 +5,19 @@
     <title>Cloud automation</title>
 
     <link rel="stylesheet" href="libs/css/bootstrap.min.css">
-    <link rel="stylesheet" href="libs/css/modern.css">
+    <!--<link rel="stylesheet" href="libs/css/modern.css">-->
     <link rel="stylesheet" href="libs/css/jquery-ui-1.10.4.css">
 
+
+    <link href="themes/metro/css/metro.css" rel="stylesheet">
+    <link href="themes/metro/css/metro-icons.css" rel="stylesheet">
+    <link href="themes/metro/css/metro-responsive.css" rel="stylesheet">
+    <link href="themes/metro/css/metro-icons.css" rel="stylesheet">
+    <link href="themes/metro/css/metro-rtl.css" rel="stylesheet">
+    <link href="themes/metro/css/metro-schemes.css" rel="stylesheet">
+
+
+    <script src="themes/metro/js/metro.js"></script>
 
     <script type="text/javascript" src="libs/store.js"></script>
     <script type="text/javascript" src="libs/flotr2.min.js"></script>
@@ -15,7 +25,11 @@
     <script type="text/javascript" src="libs/angular.min.js"></script>
 
     <script type="text/javascript" src="js/main.js"></script>
-    <script type="text/javascript" src="js/directives/demo-drtv/demo-drtv.js"></script>
+
+
+
+    <script type="text/javascript" src="js/directives/demo-comp/demo-drtv.js"></script>
+    <script type="text/javascript" src="js/directives/docker-image-selector-comp/docker-image-selector-drtv.js"></script>
 
     <script type="text/javascript" src="libs/jquery-1.9.1.min.js"></script>
     <script type="text/javascript" src="libs/jquery-ui-1.10.4.js"></script>
@@ -31,12 +45,22 @@
 
 
 
+
+
 </head>
 
 <body ng-controller="cloudMainCtrl" >
 
 
-    <demo-directive></demo-directive>
+    <div class="flex-grid">
+        <div class="row">
+            <div class="cell size3">
+                <docker-image-selector></docker-image-selector>
+            </div>
+            <div class="cell size6"></div>
+            <div class="cell size3"></div>
+        </div>
+    </div>
 
 
 

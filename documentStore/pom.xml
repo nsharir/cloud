@@ -2,17 +2,15 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.cloud</groupId>
-  <artifactId>cloud-automation</artifactId>
+  <artifactId>documentStoreAPI</artifactId>
   <packaging>pom</packaging>
   <version>1.0-SNAPSHOT</version>
-  <name>cloud-automation</name>
+  <name>documentStoreAPI</name>
   <url>http://maven.apache.org</url>
-  
-  
- 
+
   <modules>
-    <module>web-server</module>
-    <module>content</module>
-    <module>documentStore</module>
+    <module>documentStoreAPI</module>
+    <module>documentStoreImpl</module>
   </modules>
+  
 </project>

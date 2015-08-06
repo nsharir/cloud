@@ -43,7 +43,11 @@ public class App {
 
         // Tells the Jersey Servlet which REST service/class to load.
         jerseyServlet.setInitParameter(
-                "jersey.config.server.provider.classnames",
-                demoAPI.class.getCanonicalName());
+                "jersey.config.server.provider.packages",
+                "com.cloud.services");
+
+        jerseyServlet.setInitParameter(
+                "com.sun.jersey.api.json.POJOMappingFeature",
+                "true");
     }
 }

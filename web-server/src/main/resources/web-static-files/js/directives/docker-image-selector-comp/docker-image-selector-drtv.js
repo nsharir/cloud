@@ -1,25 +1,23 @@
 var app = angular.module("app",['dangle']);
 
 app
-    .directive('demoDirective', function($http) {
+    .directive('dockerImageSelector', function($http) {
             return {
                 restrict: 'E',
               //  replace:true,
-                templateUrl:'js/directives/demo-drtv/demo-tmpl.html',
+                templateUrl:'js/directives/docker-image-selector-comp/docker-image-selector-tmpl.html',
                 link:    // return the directive link function. (compile function not needed)
                  function($scope, element, attrs) {
-
-                   $http.get("/rest/demo/test")
+                        $http.get("/rest/dockerImage/list")
 
                            .success( function callback (data){
-
-                                    $scope.designTemplateName = data.templateName;
-
+                                $scope.imageList = data;
                             })
                             .error(function(data, status, headers, config) {
                                          alert(status)
                              });
                  }
+
             }
     });
 
