@@ -22,6 +22,7 @@ public class DockerImagesAPI {
 
         List<DockerImage> dockerImages = ContentReaderUtils.readContentFolder("/com/cloud/sample/dockerImages", DockerImage.class);
 
+        dockerImages.addAll(dockerImages);
         Gson gson = new GsonBuilder().create();
         return gson.toJson(dockerImages);
     }

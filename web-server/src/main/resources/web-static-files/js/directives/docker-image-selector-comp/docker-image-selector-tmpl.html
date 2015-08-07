@@ -1,6 +1,82 @@
-<div class="accordion">
-    <div class="frame">
-        <div class="heading">Images ({{imageList.length}})</div>
+<div>
+    <style>
+        .dockerImageBox {
+            height: 50px;
+            background-color: #F5F7FA;
+            box-shadow: 1px 1px 1px #AAB2BD;
+            margin-bottom: 4px;
+            padding-left: 4px;
+            border-left-color: #aa6708;
+            border-left-width: 5px;
+            border-radius: 3px;
+        }
+
+        .animate-enter,
+        .animate-leave
+        {
+            -webkit-transition: 300ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+            -moz-transition: 300ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+            -ms-transition: 300ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+            -o-transition: 300ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+            transition: 300ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+            position: relative;
+            display: block;
+            overflow: hidden;
+            text-overflow: clip;
+            white-space:nowrap;
+        }
+
+        .animate-leave.animate-leave-active,
+        .animate-enter {
+            opacity: 0;
+            height: 0px;
+        }
+
+        .animate-enter.animate-enter-active,
+        .animate-leave {
+            opacity: 1;
+            height: 50px;
+        }
+
+        .versionBadge{
+            min-width:60px;
+            max-width:60px;
+        }
+
+        .scrollable {
+            height:100%;
+            overflow-y:auto;
+        }
+
+        .selectedImage{
+            background-color: #E6E9ED;
+            border:1px solid;
+            border-color: #AAB2BD;
+        }
+
+    </style>
+
+    <div class="form-search search-only">
+        <i class="search-icon glyphicon glyphicon-search"></i>
+        <input type="text" class="form-control search-query"  ng-model="searchToken">
     </div>
-    <div ng-repeat="image in imageList">{{image.name}}</div>
+    <br>
+    <div class="scrollable">
+        <div ng-repeat="image in imageList | filter :{name : searchToken}" ng-animate="'animate'" class="dockerImageBox" ng-class="{selectedImage: $index==selectedIndex}" ng-click="selectedIndex=$index;">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12">
+                        <span class="label label-primary">{{image.category}}</span><span style="white-space:nowrap;padding-left:3px;">{{image.name}}</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-9">&nbsp</div>
+                    <div class="col-md-3">
+                        <div class="badge badge-info versionBadge">{{image.version}}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </div>

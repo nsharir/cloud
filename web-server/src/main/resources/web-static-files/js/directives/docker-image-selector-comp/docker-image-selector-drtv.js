@@ -8,6 +8,10 @@ app
                 templateUrl:'js/directives/docker-image-selector-comp/docker-image-selector-tmpl.html',
                 link:    // return the directive link function. (compile function not needed)
                  function($scope, element, attrs) {
+
+                        //$scope.selectedIndex =-1;
+                        $scope.imageList =[];
+
                         $http.get("/rest/dockerImage/list")
 
                            .success( function callback (data){
@@ -16,6 +20,7 @@ app
                             .error(function(data, status, headers, config) {
                                          alert(status)
                              });
+
                  }
 
             }
