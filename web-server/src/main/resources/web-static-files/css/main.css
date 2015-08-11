@@ -1,7 +1,9 @@
-body{
-    background-color: #E6E9ED;
+html,body{
+    background-color: #e0e3e7;
+    height: 100%;
+    width:100%;
 }
 
 input{
- background-color: #E6E9ED;
+ background-color: inherit;
 }

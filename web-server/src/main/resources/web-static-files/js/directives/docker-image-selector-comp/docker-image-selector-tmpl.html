@@ -1,9 +1,13 @@
-<div>
+<div style="height: 100%;max-width: 350px">
     <style>
+
+        .searchBox{
+            height: 20px;
+            max-height: 20px;
+        }
         .dockerImageBox {
             height: 50px;
-            background-color: #F5F7FA;
-            box-shadow: 1px 1px 1px #AAB2BD;
+            background-color: #fafcff;
             margin-bottom: 4px;
             padding-left: 4px;
             border-left-color: #aa6708;
@@ -56,11 +60,10 @@
 
     </style>
 
-    <div class="form-search search-only">
+    <div class="form-search search-only" class="searchBox" style="padding-top: 5px;padding-bottom: 5px;">
         <i class="search-icon glyphicon glyphicon-search"></i>
-        <input type="text" class="form-control search-query"  ng-model="searchToken">
+        <input type="text" class="form-control search-query"  ng-model="searchToken" style="height: 26px">
     </div>
-    <br>
     <div class="scrollable">
         <div ng-repeat="image in imageList | filter :{name : searchToken}" ng-animate="'animate'" class="dockerImageBox" ng-class="{selectedImage: $index==selectedIndex}" ng-click="selectedIndex=$index;">
             <div class="container-fluid">
