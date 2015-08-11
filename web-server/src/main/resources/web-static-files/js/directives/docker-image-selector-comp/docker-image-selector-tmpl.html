@@ -50,6 +50,7 @@
         .scrollable {
             height:100%;
             overflow-y:auto;
+            overflow-x:hidden;
         }
 
         .selectedImage{
@@ -65,11 +66,12 @@
         <input type="text" class="form-control search-query"  ng-model="searchToken" style="height: 26px">
     </div>
     <div class="scrollable">
-        <div ng-repeat="image in imageList | filter :{name : searchToken}" ng-animate="'animate'" class="dockerImageBox" ng-class="{selectedImage: $index==selectedIndex}" ng-click="selectedIndex=$index;">
+        <div draggable="true"
+             ondragstart="drag(event,{{image}})" ng-repeat="image in imageList | filter :{name : searchToken}"  ng-animate="'animate'" class="dockerImageBox" ng-class="{selectedImage: $index==selectedIndex}" ng-click="selectedIndex=$index;">
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-md-12">
-                        <span class="label label-primary">{{image.category}}</span><span style="white-space:nowrap;padding-left:3px;">{{image.name}}</span>
+                        <span class="label label-primary">{{image.category}}</span><span style="white-space:nowrap;padding-left:3px;" >{{image.name}}</span>
                     </div>
                 </div>
                 <div class="row">
