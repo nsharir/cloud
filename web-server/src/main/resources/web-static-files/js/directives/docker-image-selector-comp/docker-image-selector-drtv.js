@@ -1,9 +1,10 @@
-var app = angular.module("app",['dangle']);
+var app = angular.module("app");
 
 app
     .directive('dockerImageSelector', function($http) {
             return {
                 restrict: 'E',
+                scope:{},
               //  replace:true,
                 templateUrl:'js/directives/docker-image-selector-comp/docker-image-selector-tmpl.html',
                 link:    // return the directive link function. (compile function not needed)

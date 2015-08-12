@@ -5,15 +5,7 @@
             height: 20px;
             max-height: 20px;
         }
-        .dockerImageBox {
-            height: 50px;
-            background-color: #fafcff;
-            margin-bottom: 4px;
-            padding-left: 4px;
-            border-left-color: #aa6708;
-            border-left-width: 5px;
-            border-radius: 3px;
-        }
+
 
         .animate-enter,
         .animate-leave
@@ -66,22 +58,7 @@
         <input type="text" class="form-control search-query"  ng-model="searchToken" style="height: 26px">
     </div>
     <div class="scrollable">
-        <div draggable="true"
-             ondragstart="drag(event,{{image}})" ng-repeat="image in imageList | filter :{name : searchToken}"  ng-animate="'animate'" class="dockerImageBox" ng-class="{selectedImage: $index==selectedIndex}" ng-click="selectedIndex=$index;">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-md-12">
-                        <span class="label label-primary">{{image.category}}</span><span style="white-space:nowrap;padding-left:3px;" >{{image.name}}</span>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-9">&nbsp</div>
-                    <div class="col-md-3">
-                        <div class="badge badge-info versionBadge">{{image.version}}</div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <docker-image image="image" ng-repeat="image in imageList | filter :{name : searchToken}"  ng-animate="'animate'" ></docker-image>
     </div>
 
 </div>

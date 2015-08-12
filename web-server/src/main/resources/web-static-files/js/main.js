@@ -10,7 +10,7 @@ function drag(ev,data) {
 function drop(ev) {
     ev.preventDefault();
     var data = angular.fromJson(ev.dataTransfer.getData("draggedObject"));
-
+    ev.target.innerHTML =  ev.target.innerHTML + '<docker-image imageJson="'+ev.dataTransfer.getData("draggedObject")+'"></docker-image>';
 }
 
 angular.module('app');

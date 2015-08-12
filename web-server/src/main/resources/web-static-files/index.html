@@ -47,6 +47,7 @@
 
     <script type="text/javascript" src="js/directives/demo-comp/demo-drtv.js"></script>
     <script type="text/javascript" src="js/directives/docker-image-selector-comp/docker-image-selector-drtv.js"></script>
+    <script type="text/javascript" src="js/directives/docker-image-comp/docker-image-drtv.js"></script>
 
 
 
@@ -66,11 +67,16 @@
         &nbsp
     </div>
 
-    <div style="display:inline-block;position:absolute;top:30px;height: calc(100% -  96px);max-height:calc(100% -  96px);width: 100%;padding-left: 4px;">
-            <docker-image-selector></docker-image-selector>
+    <div style="display:inline-block;position:absolute;top:30px;height: calc(100% -  96px);max-height:calc(100% -  96px);padding-left: 4px;width:25%">
+        <docker-image-selector></docker-image-selector>
     </div>
 
-    <div ondrop="drop(event)" ondragover="allowDrop(event)" style="position:absolute;top:calc(100% - 30px);min-height:30px;max-height:30px;border: 1px solid #c5c5c5;width: 100%">
+    <div ondrop="drop(event)" ondragover="allowDrop(event)" style="border:solid 1px;display:inline-block;position:absolute;top:30px;height: calc(100% -  60px);max-height:calc(100% -  60px);padding-left: 4px;width:50%;left:calc(25%); ">
+
+    </div>
+
+
+    <div style="position:absolute;top:calc(100% - 30px);min-height:30px;max-height:30px;border: 1px solid #c5c5c5;width: 100%">
         &nbsp
     </div>
 
